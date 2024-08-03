@@ -103,7 +103,8 @@ body {
   text-align: right;
 }
 
-.coin {
+.coin-head,
+.coin-tail {
   height: 309px;
   width: 309px;
   position: relative;
@@ -121,13 +122,17 @@ body {
   backface-visibility: hidden;
 }
 
-.tails {
+.back {
   transform: rotateY(-180deg);
 }
 
 .btns {
   display: flex;
   justify-content: space-between;
+}
+
+.hide {
+  display: none;
 }
 
 button {
@@ -179,18 +184,18 @@ button {
 
 @keyframes flip-tail-to-head {
   from {
-    transform: rotateY(180deg);
+    transform: rotateY(0deg);
   }
   to {
-    transform: rotateY(360deg);
+    transform: rotateY(180deg);
   }
 }
 
 @keyframes flip-tail-to-tail {
   from {
-    transform: rotateY(180deg);
+    transform: rotateY(0deg);
   }
   to {
-    transform: rotateY(540deg);
+    transform: rotateY(360deg);
   }
 }

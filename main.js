@@ -2,7 +2,8 @@ let heads = 0;
 let tails = 0;
 let speed = 1;
 let currentSide = "head";
-let coin = document.querySelector(".coin");
+let coinHead = document.querySelector(".coin-head");
+let coinTail = document.querySelector(".coin-tail");
 let flipBtn = document.querySelector("#btn-flip");
 let resetBtn = document.querySelector("#btn-reset");
 
@@ -20,18 +21,20 @@ function disableButton() {
 
 flipBtn.addEventListener("click", () => {
   let i = Math.random();
-  coin.style.animation = "none";
-
+  coinTail.style.animation = "none";
+  coinHead.style.animation = "none";
   if (currentSide === "head") {
+    coinHead.classList.remove("hide");
+    coinTail.classList.add("hide");
     if (i < 0.5) {
       setTimeout(function () {
-        coin.style.animation = `flip-head-to-head ${speed}s forwards`;
+        coinHead.style.animation = `flip-head-to-head ${speed}s forwards`;
       }, 100);
       heads++;
       currentSide = "head";
     } else {
       setTimeout(function () {
-        coin.style.animation = `flip-head-to-tail ${speed}s forwards`;
+        coinHead.style.animation = `flip-head-to-tail ${speed}s forwards`;
       }, 100);
       tails++;
       currentSide = "tail";
@@ -39,15 +42,17 @@ flipBtn.addEventListener("click", () => {
     setTimeout(updateStats, speed * 1000);
     disableButton();
   } else {
+    coinTail.classList.remove("hide");
+    coinHead.classList.add("hide");
     if (i < 0.5) {
       setTimeout(function () {
-        coin.style.animation = `flip-tail-to-head ${speed}s forwards`;
+        coinTail.style.animation = `flip-tail-to-head ${speed}s forwards`;
       }, 100);
       heads++;
       currentSide = "head";
     } else {
       setTimeout(function () {
-        coin.style.animation = `flip-tail-to-tail ${speed}s forwards`;
+        coinTail.style.animation = `flip-tail-to-tail ${speed}s forwards`;
       }, 100);
       tails++;
       currentSide = "tail";
@@ -57,7 +62,10 @@ flipBtn.addEventListener("click", () => {
   }
 });
 resetBtn.addEventListener("click", () => {
-  coin.style.animation = "none";
+  coinHead.style.animation = "none";
+  coinTail.style.animation = "none";
+  coinHead.classList.remove("hide");
+  coinTail.classList.add("hide");
   heads = 0;
   tails = 0;
   currentSide = "head";
