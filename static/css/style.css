@@ -99,41 +99,41 @@ body {
   perspective: 350px;
 }
 
-.container .song-info {
+.song-info {
   background-color: var(--bg-color);
   padding-left: 160px;
   border-radius: 25px;
   width: 100%;
 }
 
-.container .song-info .song-name {
+.song-info .song-name {
   font-size: 2rem;
 }
 
-.container .song-info .artist-name {
+.song-info .artist-name {
   margin-bottom: 10px;
 }
 
-.container .song-info .progress {
+.song-info .progress {
   background-color: var(--bg-color);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   border-radius: 25px;
   cursor: pointer;
 }
 
-.container .song-info .progress .fill-bar {
+.song-info .progress .fill-bar {
   width: 0%;
   height: 10px;
   border-radius: 25px;
   background: var(--bg-accent-color);
 }
 
-.container .song-info .time {
+.song-info .time {
   margin: 20px 10px 20px 0px;
   text-align: end;
 }
 
-.container .cover {
+.cover {
   width: 150px;
   height: 150px;
   position: absolute;
@@ -146,14 +146,15 @@ body {
   border: 10px solid var(--bg-color);
   border-radius: 25px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  transition: all ease-in-out 0.4s;
 }
 
-.container .cover .active {
-  animation: gradient 2s ease-in 0s infinite;
+.active {
+  animation: gradient 4s ease-in-out 0s infinite alternate;
   border-color: var(--bg-accent-color);
 }
 
-.container .controls {
+.controls {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -165,14 +166,14 @@ body {
   border-radius: 25px;
 }
 
-.container .controls button {
+.controls button {
   font-size: 1.5rem;
   color: var(--font-color);
   cursor: pointer;
   transition: all ease-in-out 0.4s;
 }
 
-.container .controls button:hover {
+.controls button:hover {
   color: var(--bg-accent-color);
   font-size: 2.5rem;
 }
@@ -182,6 +183,6 @@ body {
     opacity: 100%;
   }
   100% {
-    opacity: 60%;
+    opacity: 70%;
   }
 }
