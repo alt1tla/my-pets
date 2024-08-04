@@ -6,8 +6,59 @@
     <link rel="icon" type="image/x-icon" href="./static/img/altlogo.ico" />
     <link rel="stylesheet" href="./static/css/reset.css" />
     <link rel="stylesheet" href="./static/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/ae8734ff0d.js"
+      crossorigin="anonymous"
+    ></script>
     <script defer src="./main.js"></script>
     <title>Rock Paper Scissors</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <div class="score-row">
+        <div class="block">
+          <span class="exo-2-600"
+            >wins: <span class="wins exo-2-600">0</span></span
+          >
+          <span class="exo-2-400"
+            >losses: <span class="losses exo-2-400">0</span></span
+          >
+        </div>
+        <div class="block">
+          <span class="exo-2-600"
+            >rounds: <span class="rounds exo-2-600">0</span></span
+          >
+          <span class="exo-2-400"
+            >draws: <span class="draws exo-2-400">0</span></span
+          >
+        </div>
+      </div>
+      <div class="controls">
+        <button
+          onclick="playGame('rock')"
+          class="fa-solid fa-hand-back-fist"
+        ></button>
+        <button onclick="playGame('paper')" class="fa-solid fa-hand"></button>
+        <button
+          onclick="playGame('scissors')"
+          class="fa-solid fa-hand-scissors"
+        ></button>
+        <button
+          onclick="playGame('lizard')"
+          class="fa-solid fa-hand-lizard"
+        ></button>
+        <button
+          onclick="playGame('spock')"
+          class="fa-solid fa-hand-spock"
+        ></button>
+      </div>
+      <div class="score-column">
+        <span class="exo-2-400"
+          >computer: <span class="computerDisplay exo-2-400">waiting</span
+        ></span>
+        <span class="result exo-2-700">you choose first</span>
+      </div>
+      <button id="btn-reset" class="exo-2-600">reset</button>
+    </div>
+  </body>
 </html>

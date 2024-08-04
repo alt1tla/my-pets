@@ -86,6 +86,10 @@ body {
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: var(--bg-color);
   width: 400px;
   padding: 25px;
@@ -97,4 +101,65 @@ body {
   border-radius: 25px;
   -webkit-perspective: 350px;
   perspective: 350px;
+}
+
+.score-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 25px;
+}
+
+.score-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 5px;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.controls button {
+  border: none;
+  cursor: pointer;
+  font-size: 3rem;
+  color: var(--text-color);
+}
+
+.controls button:hover {
+  transform: scale(1.1);
+  transition: all ease-in-out 0.4s;
+  color: var(--bg-accent-color);
+}
+
+#btn-reset {
+  background-color: var(--bg-color);
+  width: max-content;
+  padding: 25px;
+  border-radius: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition: all ease-in-out 0.4s;
+}
+
+#btn-reset:hover {
+  background-color: var(--bg-accent-color);
 }
